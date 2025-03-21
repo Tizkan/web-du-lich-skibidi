@@ -9,13 +9,13 @@
     <body>
         <header>
             <div class="logo">
-                <img src="D:\Folder for VSC\Web\tailieu web travelhaven\img\logo.png" alt="Travel Haven">
+                <img src="logo.png" alt="Travel Haven">
             </div>
             <div class="title">
                 <p>Du Lịch Là Hành Trình Của Trái Tim!<p>
             </div>
             <div class ="header">
-                <img src="D:\Folder for VSC\Web\tailieu web travelhaven\img\imgheader.jpg" alt="">
+                <img src="header.jpg" alt="">
                 <div class="overlay">
                     <a href="Register.html"><button class="button">Đăng ký</button></a>
                     <a href="Login.html"><button class="button">Đăng nhập</button></a>
@@ -32,29 +32,102 @@
                 </ul>
                     <form action="#" method="get">
                         <input type="search" placeholder="Tìm kiếm..." aria-label="Search">
-                        <button type="submit"><img src="D:\Folder for VSC\Web\tailieu web travelhaven\img\search.jfif" alt="kính lúp"></button>
+                        <button type="submit"><img src="search.jfif" alt="kính lúp"></button>
                     </form>
                 </li>
             </ul>
         </nav>
         <!-- Sidebar -->
-        <aside class="sidebar">
-            <h2>sidebar</h2>
-            <ul>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-            </ul>
-        </aside>
+        <div class="container">
+            <div class="sidebar">
+                <h2>Filters</h2>
+                <div>
+                    <strong>Duration:</strong>
+                    <input type="number" min="1" max="30" value=" " placeholder="VD: 2"> days
+                </div>
+                <div>
+                    <strong>Travel Styles:</strong>
+                    <ul>
+                        <li><input type="checkbox"> Văn hóa</li>
+                        <li><input type="checkbox"> Gia đình</li>
+                        <li><input type="checkbox"> Cảnh quan</li>
+                        <li><input type="checkbox"> Tham quan</li>
+                        <li><input type="checkbox"> Ẩm thực</li>
+                        <li><input type="checkbox"> biển</li>
+                    </ul>
+                </div>
+            </div>
+        
 
         <!-- Content -->
-        <section id ="content">
-            <h1>Chào mừng bạn đến với TravelHaven</h1>
-            <p>Đây là những nội dung chính của chúng tôi.</p>
-            <article> Article </article>
-        </main>
+        <div class="tour-list">
+            <div class="tour">
+                <div class="tour-image">
+                    <img src="Nha Trang.jpg" alt="Tour Image">
+                </div>        
+                <div class="tour-info">
+                    <h3>Du lịch Nha Trang</h3>
+                    <p>Văn hóa | Gia đình | biển</p>
+                    <p class="price"> 3.250.000 VND / người </p>
+                    <p>Từ: Quy Nhơn | Đến: Nha Trang</p>
+                    <a href="#" class="btn">Nhấn xem</a>
+                </div>
+            </div>
+    
+            <div class="tour">
+                <div class="tour-image">
+                    <img src="Da Nang.png" alt="Tour Image">
+                </div>        
+                <div class="tour-info">
+                    <h3>Du lịch Đà Nẵng</h3>
+                    <p>Cảnh quan | Văn hóa | Tham quan</p>
+                    <p class="price"> 3.995.000 VND / người </p>
+                    <p>Từ: Quy Nhơn | Đến: Đà Nẵng</p>
+                    <a href="#" class="btn">Nhấn xem</a>
+                </div>
+            </div>
+
+            <div class="tour">
+                <div class="tour-image">
+                    <img src="Quang Ngai.jpg" alt="Tour Image">
+                </div>  
+                <div class="tour-info">
+                    <h3>Du lịch Quảng Ngãi</h3>
+                    <p>Cảnh quan | Văn hóa | Tham quan</p>
+                    <p class="price"> 3.595.000 VND / người </p>
+                    <p>Từ: Quy Nhơn | Đến: Quảng Ngãi</p>
+                    <a href="#" class="btn">Nhấn xem</a>
+                </div>
+            </div>
+
+            <div class="tour">
+                <div class="tour-image">
+                    <img src="Hue.jpg" alt="Tour Image">
+                </div>  
+                <div class="tour-info">
+                    <h3>Du lịch Huế</h3>
+                    <p>Ấm thực | Văn hóa | Tham quan</p>
+                    <p class="price"> 4.100.000 VND / người </p>
+                    <p>Từ: Quy Nhơn | Đến: Huế</p>
+                    <a href="#" class="btn">Nhấn xem</a>
+                </div>
+            </div>
+    
+            <div class="tour">
+                <div class="tour-image">
+                    <img src="Ho Chi Minh.png" alt="Tour Image">
+                </div>  
+                <div class="tour-info">
+                    <h3>Du lịch Hồ Chí Minh</h3>
+                    <p>Văn hóa | Ẩm thực | Tham quan</p>
+                    <p class="price">3.420.000 VND / người </p>
+                    <p>Từ: Quy Nhơn | Đến: Hà Nội</p>
+                    <a href="#" class="btn">Nhấn xem</a>
+                </div>
+            </div>
+        </div>
     </div>
+     <!-- Footer -->
     <section class="footer">
         <div class="footer-content">
             <p>&copy; 2025 Website của tôi. All rights reserved.</p>
