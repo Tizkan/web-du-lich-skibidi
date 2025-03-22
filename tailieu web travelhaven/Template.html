@@ -39,23 +39,99 @@
         </nav>
         <!-- Sidebar -->
         <div class="container">
+            <div class="filter-container">
             <div class="sidebar">
-                <h2>Filters</h2>
+                <h2>Thanh Lọc</h2>
                 <div>
-                    <strong>Duration:</strong>
+                    <strong>Thời gian:</strong>
                     <input type="number" min="1" max="30" value=" " placeholder="VD: 2"> days
                 </div>
                 <div>
-                    <strong>Travel Styles:</strong>
-                    <ul>
-                        <li><input type="checkbox"> Văn hóa</li>
-                        <li><input type="checkbox"> Gia đình</li>
-                        <li><input type="checkbox"> Cảnh quan</li>
-                        <li><input type="checkbox"> Tham quan</li>
-                        <li><input type="checkbox"> Ẩm thực</li>
-                        <li><input type="checkbox"> biển</li>
+                    <strong>Thể loại:</strong>
+                    <ul class="category">
+                        <li>
+                            <input type="checkbox" id="Văn hóa" class="toggle-input">
+                            <label for="Văn hóa" class="toggle-label">Văn hóa</label>
+                            <ul class="sub-category">
+                                <li>
+                                    <input type="checkbox" id="Văn hóa miền Bắc">
+                                    <label for="Văn hóa miền bắc">Văn hóa miền bắc</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="Văn hóa miền Trung">
+                                    <label for="Văn hóa miền Trung">Văn hóa miền Trung</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="Văn hóa miền Nam">
+                                    <label for="Văn hóa miền Nam">Văn hóa miền Nam</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="Phiêu lưu" class="toggle-input">
+                            <label for="Phiêu lưu" class="toggle-label">Phiêu lưu</label>
+                            <ul class="sub-category">
+                                <li>
+                                    <input type="checkbox" id="Tham quan">
+                                    <label for="Tham quan">Tham quan</label>
+                                </li>                      
+                                <li>
+                                    <input type="checkbox" id="Gia đình">
+                                    <label for="Gia đình">Gia đình</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="Biển">
+                                    <label for="Biển">Biển</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="Ẩm thực">
+                                    <label for="Ẩm thực">Ẩm thực</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="Phương tiện" class="toggle-input">
+                            <label for="Phương tiện" class="toggle-label">Phương tiện</label>
+                            <ul class="sub-category">
+                                <li>
+                                    <input type="checkbox" id="Xe đạp">
+                                    <label for="Xe đạp">Xe đạp</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="Xe máy">
+                                    <label for="Xe máy">xe máy</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="Xe khách">
+                                    <label for="Xe khách">Xe khách</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="Du thuyền">
+                                    <label for="Du thuyền">Du thuyền</label>
+                                </li>
+                            </ul>
+                        </li>              
+                        <li>
+                            <input type="checkbox" id="thiên nhiên" class="toggle-input">
+                            <label for="thiên nhiên" class="toggle-label">thiên nhiên</label>
+                            <ul class="sub-category">
+                                <li>
+                                    <input type="checkbox" id="Cảnh quan">
+                                    <label for="Cảnh quan">Cảnh quan</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="Di tích">
+                                    <label for="Di tích">Di tích</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="động vật">
+                                    <label for="động vật">động vật</label>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
+            </div>
             </div>
         
 
@@ -125,8 +201,13 @@
                     <a href="#" class="btn">Nhấn xem</a>
                 </div>
             </div>
+            <!-- Nút đăng bài -->
+                <div class="add-post-btn">
+                   <span>+</span>
+                </div>
         </div>
     </div>
+    
      <!-- Footer -->
     <section class="footer">
         <div class="footer-content">
