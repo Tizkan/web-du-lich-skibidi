@@ -1,26 +1,31 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Apr 23, 2025 at 03:33 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
--- Tạo cơ sở dữ liệu
-CREATE DATABASE IF NOT EXISTS quangbadulich;
-USE quangbadulich;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
--- Tạo bảng người dùng
-CREATE TABLE IF NOT EXISTS users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL UNIQUE KEY,
-    password VARCHAR(255) NOT NULL,
-    fullname VARCHAR(100),
-    dob VARCHAR(10),
-    gender VARCHAR(10),
-    email VARCHAR(100),
-    income VARCHAR(50)
-);
 
--- Thêm dữ liệu mẫu
-INSERT INTO users (username, password, fullname, dob, gender, email, income) VALUES
-('nguyenvana', '$2y$10$1234567890abcdefghijklmnopqrstuv', 'Nguyễn Văn A', '01/1995', 'Nam', 'vana@example.com', '12000000'),
-('tranthib', '$2y$10$abcdefghij1234567890klmnopqrstuv', 'Trần Thị B', '03/1998', 'Nữ', 'thib@example.com', '8500000'),
-('letrongc', '$2y$10$zxcvbnmasdfghjklqwertyuiop123456', 'Lê Trọng C', '07/1992', 'Nam', 'trongc@example.com', '15000000');
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
+--
+-- Database: `quangbadulich`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
+--
 
 CREATE TABLE `posts` (
   `id_post` int(11) NOT NULL,
@@ -29,8 +34,114 @@ CREATE TABLE `posts` (
   `img` varbinary(6550) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id_post`, `location`, `descript`, `img`) VALUES
+(1, 'Cù Lao Xanh - Quy Nhơn', 'Đến với Quy Nhơn bạn không thể bỏ qua Cù Lao Xanh - Một hòn đảo quân sự, nằm cách cửa biển Quy Nhơn 13 hải lý. Cù Lao Xanh có diện tích khoảng 70ha san hô rộng lớn bao quanh đảo, nơi đây có rất nhiều loại hải sản quý hiếm, các rặng san hô đầy sắc màu và làn nước xanh mát lôi cuốn.\r\n\r\nThời gian thích hợp nhất để đi Cù Lao Xanh là từ tháng 2 - 9, thời điểm này biển lặng, nắng đẹp, nước biển trong xanh, bạn có thể thoải mái tắm biển, lặn ngắm san hô quanh đảo. Lưu ý, từ tháng 10 - 2 là thời điểm mưa nhiều, biển động, có nhiều sóng lớn nên không phù hợp để đi du lịch Cù Lao Xanh mùa này.\r\n\r\nPhương tiện đến Cù Lao Xanh có 2 loại chính đó là cano và tàu gỗ:\r\n\r\nThời gian đi cano mất khoảng 25 phút, giá vé là 200.000đ/người/lượt.\r\nThời gian đi bằng tàu gỗ mất khoảng 2 tiếng, giá vé 35.000đ/người/lượt.\r\nDu lịch Cù Lao Xanh bạn sẽ có cơ hội tham gia vào các hoạt động như:\r\n\r\nTắm biển, lặn ngắm san hô (chi phí khoảng 100.000đ/người), trải nghiệm cảm giác mạnh với trò chơi mô tô nước hay câu mực,...\r\nKhám phá các địa điểm tham quan hấp dẫn trên đảo như: Khu dã ngoại Cù Lao Xanh (giá vé vào cổng khoảng 10.000đ/người), Bãi Đá Thảo Nguyên - nơi check in vô cùng lý tưởng, với những bãi đá nhiều hình thù lạ mắt, ngọn Hải Đăng, cột cờ chủ quyền, Bãi Nam,...\r\nThưởng thức các món đặc sản vô cùng hấp dẫn như: Cua đá (600.000đ - 800.000đ/kg), mực lá (350.000đ - 500.000đ/kg), nhím biển, ốc mặt trăng, vú nàng nướng mỡ hành, rượu vú zẻ,...', 0x123456),
+(2, 'Cửa Biển - Quy Nhơn', 'Khu du lịch Cửa Biển Quy Nhơn (Seagate Park Quy Nhơn) thuộc quản lý Công ty TNHH Dịch vụ du lịch Quốc Thắng, được đưa vào hoạt động chính thức ngày 28/04/2018, đến nay Seagate Park Quy Nhơn đã đón hơn 10.000 lượt khách trong tỉnh cũng như khách ngoài tỉnh đến tham quan.\r\n\r\nKhu Du lịch Cửa Biển – Seagate Park được thiết kế là một công viên đậm chất thiên nhiên hoang dã, với cảnh quan đồi núi, rừng, biển khá đa dạng; kết hợp với nhiều dịch vụ vui chơi, thể thao, giải trí dành cho mọi lứa tuổi, là điểm nhấn độc đáo đối với du khách khi đến với Bình Định.', 0x123456),
+(3, 'Eo Gió - Quy Nhơn', 'Eo Gió là một trong những địa điểm du lịch Quy Nhơn được nhiều khách du lịch ghé qua nhất. Nằm cách trung tâm thành phố Quy Nhơn từ 20km tại xã Nhơn Lý. Eo Gió là một khu vực eo biển nhỏ, nằm nép mình bên trong hai dãy núi hùng vĩ với cảnh quan thiên nhiên vô cùng xinh đẹp, cái tên Eo Gió cũng xuất phát từ đây. Eo Gió sở hữu làn nước biển trong xanh với thiên nhiên vô cùng tươi đẹp, tại đây còn có một con đường đi bộ với những cột rào chắn màu đỏ và cũng chính là địa điểm “check-in” vô cùng nổi tiếng. Thế nên nếu muốn sở hữu những tấm hình đẹp nhất khi đi du lịch Quy Nhơn thì Eo Gió chính là cái tên đầu tiên mà bạn nên cân nhắc.', 0x123456),
+(4, 'Đồi cát Phương Mai - Quy Nhơn', 'Quy Nhơn chắc chắn không chỉ có biển, mà còn có những đồi cát cho chúng ta trải nghiệm. Địa điểm du lịch Quy Nhơn thú vị tiếp theo mà bạn nên ghé qua chính là đồi cát Phương Mai. Nơi đây được mệnh danh là “Sahara” của Quy Nhơn với những đồi cát rộng lớn đến hàng chục cây số, ta có thể tản bộ trên những đồi cát này, ngắm nhìn toàn cảnh thiên nhiên nơi đây. Đồi cát Phương Mai nằm tại độ cao 100m so với mực nước biển, nơi đây còn có những rừng cây dương xanh nên vô cùng mát mẻ. Ghé thăm đồi cát thì dĩ nhiên không thể bỏ qua trò chơi thú vị là trượt cát rồi phải không nào. Nếu muốn tìm kiếm một địa điểm mới mẻ trừ các bãi biển thì nơi đây chính là địa điểm bạn nên ghé qua.', 0x123123),
+(5, 'Kỳ Co - Quy Nhơn', 'Kỳ Co là một địa điểm du lịch Quy Nhơn nổi tiếng với thiên nhiên hoang sơ, hoàn toàn chưa bị các hoạt động dịch vụ du lịch làm phiền. Biển Kỳ Co khác biệt so với những bãi tắm khác là nơi đây có nhiều bãi cát vàng, dòng nước xanh trong, bên cạnh đó còn có nhiều núi đá nhấp nhô vô cùng thú vị. Một điều được nhiều du khách ưa thích nữa là Kỳ Co là bãi ngang, nên sóng biển khá yếu và có thể an tâm tận hưởng. Khí hậu tại đây có đặc trưng là khá mát mẻ ôn hoà cộng với sự ưu đãi từ thiên nhiên nên rất phù hợp để tìm kiếm một điều gì đó mới mẻ. Bạn có thể đặt tour Kỳ Co để khám phá trọn vẹn vẻ đẹp của địa điểm này.', 0x123456),
+(6, 'Hòn Khô - Quy Nhơn', 'Làng chài Nhơn Hải hay còn gọi là Hòn Khô, nơi đây là một hòn đảo bình yên với sóng biển vỗ nhẹ cùng làn nước trong xanh. Đến đây mà chỉ ngắm cảnh thì quá phí, ta còn có thể tắm biển hay lặn san hô dưới lòng đại dương. Dưới nước đã thế còn trên bờ thì sao, dĩ nhiên ta có thể cùng bạn bè trải nghiệm các bãi cát trắng mịn, chinh phục các dãy núi đá bí ẩn hay khám phá con đường bí ẩn dưới biển ấn tượng.', 0x123456),
+(7, 'Tháp đôi - Quy Nhơn', 'Quy Nhơn là vùng đất quan trọng của người Chăm Pa ngày xưa, chính vì thế mà nơi đây có rất nhiều di tích, đền tháp của người Chăm. Địa điểm nổi tiếng nhất phải kể đến chính là tháp đôi Quy Nhơn. Mặc dù trải qua nhiều biến cố trong lịch sử, nhưng do được đầu tư tôn tạo, trùng tu đúng cách nên vẫn giữ được kiến trúc như ban đầu. Đây chính là một địa điểm lý tưởng để khám phá một nét văn hoá hoàn toàn khác của Quy Nhơn cho bạn đấy.', 0x123456),
+(8, 'Làng chài Hải Minh - Quy Nhơn', 'Làng chài Hải Minh thực ra vẫn còn là một cái tên khá mới mẻ, nhưng cùng vì thế mà nơi đây mới trở thành địa điểm du lịch Quy Nhơn thú vị cho chúng ta khám phá đấy. Làng chài nằm trên bán đảo Phương Mai với các dãy núi dài đến khoảng 20km. Đến với làng chài, ta sẽ được chiêm ngưỡng những ngôi nhà gần sát mép nước biển san sát nhau, ngắm nhìn những chiếc thuyền đánh cá to lớn. Đi vào sâu hơn sẽ là những con đường quanh co dẫn đến khu vực tượng danh tướng Trần Hưng Đạo, từ đây ta có thể ngắm toàn cảnh thành phố Quy Nhơn vô cùng đẹp.', 0x123456),
+(9, 'Đầm Ô Loan - Quy Nhơn', 'Đầm Ô Loan là một địa điểm du lịch gần Quy Nhơn nổi tiếng mà nhất định bạn phải ghé. Nơi này thuộc địa phận tỉnh Phú Yên và cách không xa thành phố Quy Nhơn là mấy. Đầm Ô Loan cách thành phố Tuy Hòa, tỉnh Phú Yên khoảng 22km.\r\n\r\nNếu bạn quyết định xuất phát từ thành phố Quy Nhơn, thì quãng đường từ Quy Nhơn tới Đầm Ô Loan sẽ là khoảng 80km, tương đương 1 tiếng rưỡi lái xe ô tô. Tuy khoảng cách có thể hơi xa là thế, nhưng chắc chắn rằng bạn sẽ cảm thấy xứng đáng bởi bạn sẽ có cơ hội chiêm ngưỡng một trong những khung cảnh đẹp nhất của tỉnh Phú Yên, nằm ngay cạnh tỉnh Bình Định.\r\n\r\nĐiểm thu hút của Đầm Ô Loan chính là việc bạn sẽ được chiêm ngưỡng khung cảnh hoàng hôn tuyệt đẹp cùng với hình ảnh ngư dân đánh cá trở về cùng với những chiếc túi chứa đầy cá. Ngoài ra, bạn đừng quên thưởng thức hải sản gần đấy, chắc chắn sẽ làm bạn không thể quên.', 0x123456),
+(10, 'Ghềnh Ráng - Quy Nhơn', 'Ghềnh Ráng là một khu du lịch nổi tiếng ở Quy Nhơn, cách trung tâm thành phố khoảng 3 km về hướng Đông Nam. Khi đến với Ghềnh Ráng, bạn sẽ có cơ hội tham quan và tận hưởng khung cảnh tuyệt đẹp của những địa điểm nổi tiếng trong khu vực này bao gồm Bãi Tắm Hoàng Hậu, Bãi Tiên Sa cũng như tận hưởng sự bình yên khi ghé thăm mộ của nhà thơ lỗi lạc Hàn Mặc Tử và không gian yên tĩnh của nhà thờ Ghềnh Ráng.\r\n\r\nĐiểm làm cho Ghềnh Ráng trở nên đặc biệt chính là việc những hòn đá ôm sát đường bờ biển tạo nên một khung cảnh có một không hai.', 0x123456),
+(11, 'Tháp Bánh Ít - Quy Nhơn', 'Một địa điểm du lịch gần Quy Nhơn khác không thể không kể đến chính là Tháp Bánh Ít. Tháp Bánh Ít nằm trên một ngọn đồi có tầm nhìn xa khắp tỉnh Bình Định tại thôn Đại Lễ, xã Phước Hiệp, huyện Tuy Phước.\r\n\r\nTừ thành phố Quy Nhơn tới tháp Bánh Ít, quãng đường trung bình sẽ là khoảng 15km và bạn sẽ phải tốn khoảng 20-30 phút để đến được địa điểm du lịch này. Người dân địa phương gọi đây là tháp Bánh Ít, một loại bánh đặc sản Bình Định là bởi vì khi nhìn từ xa, tháp sẽ có hình dạng giống một chiếc bánh ít. Ngoài ra, một cái tên khác của tháp Bánh Ít mà bạn cũng có thể nghe thoáng qua chính là tháp Bạc. Theo các nhà sử học, tháp bánh Ít được xây dựng từ thế kỷ V bởi người Champa và sự nguyên vẹn của kiến trúc vẫn còn được lưu giữ cho tới ngày nay. Chính bởi vì lí do đấy, tháp Bánh Ít được một số tạp chí nước ngoài vinh danh là một trong Top 1000 công trình kiến trúc cổ trên thế giới bạn phải ghé thăm. ', 0x123456),
+(12, 'Khu du lịch Trung Lương - Quy Nhơn', 'Khu du lịch Trung Lương là một địa điểm du lịch ở Quy Nhơn khác mà bạn cũng có thể cân nhắc ghé thăm nếu bạn còn dư dả thời gian. Địa điểm này cách thành phố Quy Nhơn 25km và bạn có thể sẽ phải mất 30 phút đi bằng xe ô tô để có thể tới được địa điểm này. Khu du lịch Trung Lương sẽ phù hợp với những du khách muốn tận hưởng cảm giác nghỉ ngơi thư thái ở biển và cắm trại dã ngoại cùng gia đình. Nếu không có nhiều thời gian, bạn có thể ghé qua dừng chân tại đây và tận hưởng một ly cafe có view nhìn ra biển. Ngoài ra, ở khu du lịch Trung Lương có trang trí sẵn những cảnh vật trang trí nhân tạo, đủ sức để bạn có những bức hình \"sống ảo\" siêu chất. \r\n\r\nMột điểm trừ be bé là nếu bạn muốn gọi thức ăn ở đây thì giá sẽ hơi đắt. giá vé vào cổng là 40.000 VNĐ/người, trẻ em cao dưới 1m sẽ được miễn phí vé. Bạn cũng sẽ cần phải chuẩn bị sức khỏe và tinh thần sẵn sàng vì khi bước vào cổng, bạn sẽ phải đi xuống một bậc thang rất sâu để tới được khu du lịch.', 0x123456),
+(13, ' Khu du lịch Hầm Hô - Quy Nhơn', 'Khu du lịch Hầm Hô là một địa điểm du lịch Quy Nhơn khác bạn cũng có thể cân nhắc ghé thăm. Đây là một thắng cảnh đủ để khiến bạn say đắm và ngây ngất với cảnh đẹp ở Bình Định. Khu du lịch Hầm Hô nổi tiếng với cảnh sắc nuối non hùng vĩ và thác nước chảy cuồn cuộn và đẹp đến ngỡ ngàng.Khu du lịch Hầm Hô nằm ở xã Tây Phú, huyện Tây Sơn, tỉnh Bình Định. Nếu bạn xuất phát từ thành phố Quy Nhơn bằng ô tô, quãng đường sẽ là gần 50km và bạn sẽ phải mất khoảng 45 phút di chuyển. Tuy nhiên, khung cảnh thiên nhiên tuyệt vời sẽ giúp bạn quên đi sự mệt mỏi sau khi lái xe.\r\n\r\nMột số hạng mục trong khu du lịch vẫn đang trong quá trình hoàn thiện, nên bạn có thể sẽ phải tự chuẩn bị thức ăn để chuyến dã ngoại được thuận tiện hơn. \r\n\r\nGía vé tham quan cho người lớn là 20.000 VNĐ/người. Vé đi đò là 45.000 VNĐ/người. Nếu bạn di chuyển tới đây bằng xe ô tô thì sẽ có thêm phụ phí 15.000 VNĐ/người.', 0x123456),
+(14, 'Mũi Rồng - Quy Nhơn', 'Mũi Rồng là một địa điểm du lịch Quy Nhơn nổi tiếng với khung cảnh thiên nhiên kì lạ mà không nơi nào khác ở Bình Định có được. Từ thành phố Quy Nhơn di chuyển tới Mũi Rồng sẽ mất khoảng 1 giờ 45 phút nếu di chuyển bằng ô tô do quãng đường là 75km.\r\n\r\nNgười dân Bình Định gọi đây là Mũi Rồng bởi vì sau một thời gian mài mòn bởi nước biển, những chỏm đá ở đây bắt đầu trông giống mũi của Rồng. Do đó, cái tên Mũi Rồng xuất hiện. ', 0x123456),
+(15, 'Đầm Thị Nại - Quy Nhơn', 'Đầm Thị Nại là một địa điểm du lịch Quy Nhơn thú vị khác mà bạn có thể ghé thăm nếu còn thời gian. Đầm Thị Nại nằm cách thành phố Quy Nhơn 8 km về phía đông bắc và là đầm lớn nhất Bình Định. Nơi đây có một hệ sinh thái phong phú với nhiều loài động thực vật có giá trị cũng như nhiều danh lam thắng cảnh đẹp rất hấp dẫn du khách. Đầm Thị Nại có diện tích mặt nước trên 5.000 ha, chiều dài hơn 10 km, chiều rộng gần 4 km. \r\n\r\nĐây là vị trí có nguồn tài nguyên thiên nhiên quý giá và là thiên đường của đa dạng sinh học, với hệ sinh thái rừng ngập mặn phong phú bao gồm 25 loài cỏ biển, 64 loài sinh vật phù du và 76 loài cá. Có hàng trăm loài chim, 23 trong số đó là chim nước và chim di cư, và 10 trong số đó là chim rừng.\r\n\r\nBán đảo Phương Mai nằm ở phía đông đầm Thị Nại đóng vai trò như một bức bình phong khổng lồ hướng biển cho thành phố Quy Nhơn, với hệ thống núi đá trập trùng và cồn cát đồ sộ trải dài gần 15 km. Những bãi biển tuyệt đẹp trải dài hàng chục km về phía Bắc và Tây Bắc của bán đảo. Nhìn từ xa, bán đảo Phương Mai giống như đầu một con rồng, thân vươn dài về phía Bắc đến cửa Đề Gi. Cực Nam bán đảo có hình lưỡi mác với nhiều hốc đá kỳ thú, hiểm trở, chim yến thường xuyên kéo về làm tổ, cung cấp cho người dân nơi đây đặc sản “yến sào” vô cùng bổ dưỡng và quý hiếm.', 0x123456),
+(16, 'FLC Zoo Safari - Quy Nhơn', 'Nếu bạn là một người đam mê động vật, thì FLC Zoo Safari Quy Nhơn là một địa điểm du lịch Quy Nhơn không thể bỏ qua. Ở trong khuôn viên của nơi đây, bạn sẽ có cơ hội quan sát và ngắm nhìn hơn1000 loại động vật quý hiểm như: Gấu, đà điểu, hươu sao, lạc đà, vượn, thiên nga,.... \r\n\r\nFLC Zoo Safari Quy Nhơn được hoàn thành xây dựng vào năm 2017 và nhanh chóng trở thành điểm thu hút khách du lịch của địa phương này. Khuôn viên của nơi đây rộng tới hơn 38,5 ha, đủ để bạn dành cả một ngày tại đây. \r\n\r\nNgoài ra, khi bạn đi du lịch cùng với trẻ nhỏ, FLC Zoo Safari Quy Nhơn cũng trở thành nơi mà trẻ có cơ hội hiểu hơn về động vật, từ đó trẻ sẽ biết cách yêu thương và chăm sóc chúng hơn. Bạn và trẻ nhỏ nhất định sẽ có những khoảnh khắc không thể nào quên tại đây. \r\n\r\nGiá vé vào cổng của FLC Zoo Safari Quy Nhơn đối với người lớn là 80.000 đồng/vé, trẻ em 60.000 đồng/vé, tha hồ cho bạn dạo một vòng công viên và khám phá.', 0x123456),
+(17, 'Golf Laguna Lăng Cô - Huế', 'Địa điểm du lịch Huế nào dành cho những người yêu thích golf? Nằm cách trung tâm thành phố Huế khoảng 60km, Golf Laguna Lăng Cô là sân golf 18 lỗ đạt tiêu chuẩn quốc tế, được thiết kế bởi Nick Faldo. Với khung cảnh thiên nhiên tuyệt đẹp, sân golf này hứa hẹn mang đến những trải nghiệm thú vị cho các golfer.', 0x123456),
+(18, 'Kinh Thành Huế - Đại Nội', 'Đại Nội là tên gọi phổ biến dùng cho cụm công trình gồm Hoàng thành và Tử Cấm Thành, được xây dựng vào năm 1804. Đại Nội có hơn 140 công trình lớn nhỏ phục vụ cho bộ máy chính quyền trung ương, với hệ thống cổng thành cũng đồ sộ không kém. Toàn bộ Đại Nội trải rộng trên một khu đất có hình dạng gần vuông, mỗi cạnh lên đến 2500 m. Một số công trình và địa điểm “must check-in” khi bạn ghé thăm đại nội:\r\n\r\nNgọ Môn (cổng chinh phía Nam của Hoàng Thành)\r\nĐược xây dựng vào năm 1833 dưới thời vua Minh Mạng, là nơi diễn ra các nghi lễ quan trọng của triều Nguyễn. Ngọ Môn vừa mang nét uy nghi, bề thế, vừa đậm màu rêu phong của thời gian.\r\n\r\nĐiện Thái Hòa\r\nĐây là công trình quan trọng nhất trong khu vực Hoàng Thành. Được xây dựng vào năm 1805, Điện Thái Hòa là nơi diễn ra các đại lễ của 13 đời vua từ Gia Long đến Bảo Đại. Điện Thái Hòa có sân chầu rộng lớn phía trước, bên trong được thiết trí ngai vàng dùng làm nơi ngự của vua trong các buổi chầu, lễ. Với diện tích lớn và chứa đựng nhiều giá trị văn hóa cùng nhiều kiến trúc đẹp, Điện Thái Hòa là nơi bạn không nên bỏ qua khi ghé thăm Đại Nội.\r\n\r\nCác miếu\r\nThái Miếu (miếu thờ các vị chúa Nguyễn, xây dựng từ năm 1802), Hưng Miếu (miếu thờ ông Nguyễn Phúc Luân, thân sinh vua Gia Long), Thế Miếu (miếu thờ các vị chúa Nguyễn, xây dựng từ năm 1821), Triệu Miếu (miếu thờ Nguyễn Kim, thân sinh chúa Tiên Nguyễn Hoàng).\r\n\r\nVườn Cơ Hạ và điện Khâm Văn\r\nLà một trong năm khu vườn ngự uyển nằm bên trong Hoàng Thành, là nơi học tập và vui chơi của Hoàng tử, có diện tích lớn và cách bài trí hài hòa, đẹp mắt.', 0x123456),
+(19, 'Sông Hương - Huế', 'Sông Hương không chỉ là dòng sông quan trọng của Huế mà còn là một địa điểm du lịch Huế hấp dẫn. Bạn có thể dạo bước dọc bờ sông, ngắm cảnh cầu Tràng Tiền, thả hoa đăng cầu may mắn, hay lựa chọn du thuyền trên sông Hương để thưởng ngoạn vẻ đẹp cố đô từ góc nhìn khác biệt. Đặc biệt, đừng quên trải nghiệm ca Huế ăn tối trên sông Hương vào buổi tối để cảm nhận trọn vẹn nét lãng mạn và thơ mộng của vùng đất này.', 0x123456),
+(20, 'Trung Tâm Nghệ Thuật Kỹ Thuật Số Songlab', 'Trung Tâm Nghệ Thuật Kỹ Thuật Số Songlab là địa điểm du lịch Huế mới lạ, nơi công nghệ và nghệ thuật giao thoa. Đến đây, bạn sẽ được trải nghiệm những tác phẩm nghệ thuật kỹ thuật số độc đáo, tương tác với các không gian ảo và khám phá những ứng dụng mới nhất của công nghệ trong nghệ thuật.\r\n\r\n', 0x123456),
+(22, 'Đan viện Thiên An - Huế', 'Nằm cách trung tâm thành phố Huế khoảng 5km, Đan viện Thiên An là một địa điểm du lịch Huế lý tưởng cho những ai muốn tìm kiếm sự yên bình và tĩnh lặng. Với kiến trúc Gothic độc đáo, khuôn viên rộng lớn với những vườn hoa xinh đẹp, Đan viện Thiên An mang đến không gian thanh tịnh, giúp bạn tạm lánh xa những ồn ào của phố thị.\r\n\r\n', 0x1234),
+(23, 'Hồ Thủy Tiên - Huế', 'Hồ Thủy Tiên là một địa điểm du lịch Huế mang vẻ đẹp bí ẩn và ma mị. Công viên giải trí bỏ hoang này mang đến cho du khách cảm giác như lạc vào một thế giới khác, với những công trình kiến trúc độc đáo phủ đầy rêu phong và những câu chuyện kỳ bí.', 0x0123),
+(24, 'Vịnh Lăng Cô - Huế', 'Vịnh Lăng Cô là một địa điểm du lịch Huế nổi tiếng với vẻ đẹp hoang sơ, bãi cát trắng mịn và làn nước trong xanh. Nơi đây lý tưởng cho các hoạt động nghỉ dưỡng, tắm biển, lặn ngắm san hô và thưởng thức hải sản tươi ngon.', 0x0123),
+(25, 'Đấu trường Hổ Quyền - Huế', 'Bạn muốn tìm hiểu về một nét văn hóa độc đáo của Huế xưa? Địa điểm du lịch Huế nào sẽ đưa bạn trở về quá khứ? Đấu trường Hổ Quyền là một di tích lịch sử thú vị, nơi từng diễn ra những trận đấu giữa hổ và voi thời Nguyễn. Ngày nay, tuy không còn những trận đấu kịch tính, nhưng đấu trường vẫn giữ được kiến trúc độc đáo và là điểm đến thu hút du khách.', 0x0123),
+(26, 'Bảo tàng nghệ thuật Lebadang Memory Spac', 'Bạn là người yêu thích nghệ thuật? Hãy đến với Bảo tàng nghệ thuật Lebadang Memory Space, nơi trưng bày các tác phẩm của họa sĩ Lê Bá Đảng, một trong những tên tuổi lớn của hội họa Việt Nam. Không gian triển lãm hiện đại, cùng những tác phẩm nghệ thuật độc đáo sẽ mang đến cho bạn những trải nghiệm thú vị.\r\n\r\n', 0x0123),
+(27, 'Vườn quốc gia Bạch Mã', 'Địa điểm du lịch Huế nào dành cho những người yêu thích khám phá thiên nhiên? Vườn quốc gia Bạch Mã là một lựa chọn tuyệt vời! Với hệ sinh thái phong phú, nhiều loài động thực vật quý hiếm, Bạch Mã là điểm đến lý tưởng để bạn trekking, khám phá thác nước và tận hưởng không khí trong lành.\r\n\r\n', 0x0123),
+(28, 'Rừng Rú Chá - Huế', 'Rừng Rú Chá là một địa điểm du lịch Huế còn khá mới mẻ, thu hút du khách bởi vẻ đẹp hoang sơ và hệ sinh thái đa dạng. Bạn có thể tham gia tour du lịch bằng thuyền, len lỏi qua những cánh rừng ngập mặn, quan sát các loài chim, tìm hiểu về đời sống của người dân địa phương và thưởng thức những món ăn đặc sản.\r\n\r\n', 0x0123),
+(29, 'Khám phá nét đẹp văn hóa Chăm tại Tháp C', 'Địa điểm du lịch Huế nào mang đậm dấu ấn văn hóa Chăm? Tháp Chăm Phú Diên là một công trình kiến trúc cổ kính, mang đậm nét văn hóa Chămpa. Đến đây, bạn không chỉ được chiêm ngưỡng kiến trúc độc đáo mà còn có cơ hội tìm hiểu thêm về lịch sử và văn hóa của dân tộc Chăm.', 0x0123),
+(30, 'A Lưới – A Roàng - Huế', 'A Lưới - A Roàng là địa điểm du lịch Huế dành cho những ai yêu thích khám phá thiên nhiên và văn hóa dân tộc. Vùng đất này nổi tiếng với những cánh rừng nguyên sinh, những thác nước hùng vĩ và bản sắc văn hóa độc đáo của đồng bào dân tộc thiểu số.', 0x0123),
+(31, 'Núi Tuý Vân', 'Núi Tuý Vân là một địa điểm du lịch Huế lý tưởng để ngắm nhìn toàn cảnh thành phố. Từ đỉnh núi, bạn có thể phóng tầm mắt ra xa, chiêm ngưỡng vẻ đẹp của sông Hương, núi Ngự Bình, chùa Thiên Mụ... và cảm nhận sự yên bình của cố đô.\r\n\r\n', 0x0123),
+(32, 'Ghềnh Lăng (Gành Lăng) - Huế', 'Ghềnh Lăng là một địa điểm du lịch Huế hấp dẫn với cảnh quan sông nước hữu tình. Nơi đây nổi tiếng với những ghềnh đá nhấp nhô, dòng nước trong xanh và không khí mát mẻ. Bạn có thể dạo chơi, chụp ảnh, thưởng thức đặc sản địa phương hoặc tham gia các hoạt động như câu cá, chèo thuyền kayak...', 0x0123),
+(33, 'Di Tích Lịch Sử Chín Hầm - Huế', 'Địa điểm du lịch Huế nào gắn liền với lịch sử đấu tranh chống Mỹ? Di Tích Lịch Sử Chín Hầm là một hệ thống hầm kiên cố được xây dựng trong lòng đất, từng là căn cứ quan trọng của quân và dân Huế trong thời kỳ kháng chiến chống Mỹ. Đến đây, bạn sẽ được tìm hiểu về những câu chuyện lịch sử hào hùng, chiêm ngưỡng hệ thống đường hầm và cảm nhận tinh thần bất khuất của người dân Huế.', 0x0123),
+(34, 'Làng Thanh Tiên - Huế', 'Làng Thanh Tiên, một ngôi làng cổ bình yên nép mình bên dòng sông Hương thơ mộng, là một điểm đến thú vị cho những ai muốn tìm hiểu về văn hóa và lịch sử Huế. Nơi đây nổi tiếng với nghề làm hoa giấy truyền thống, một nét đẹp tinh tế đã tồn tại qua nhiều thế hệ.\r\n\r\nBước chân vào làng Thanh Tiên, du khách sẽ bị cuốn hút bởi những sắc màu rực rỡ của hoa giấy. Hoa sen, hoa cúc, hoa mai… được tạo nên từ đôi bàn tay khéo léo của người dân, mang vẻ đẹp thanh tao và sống động. Không chỉ là một nghề mưu sinh, làm hoa giấy còn là niềm tự hào, là nét đẹp văn hóa được người dân gìn giữ và phát triển.', 0x0123),
+(35, 'Thác Mơ - Huế', 'Bạn muốn hòa mình vào thiên nhiên trong lành? Địa điểm du lịch Huế nào sẽ giúp bạn \"refresh\" bản thân? Thác Mơ là một lựa chọn tuyệt vời! Nằm ẩn mình giữa núi rừng, Thác Mơ mang vẻ đẹp hoang sơ với dòng nước trắng xóa đổ xuống từ trên cao, tạo nên khung cảnh hùng vĩ và thơ mộng. Đến đây, bạn có thể tắm suối, thư giãn và tận hưởng không khí trong lành của thiên nhiên.\r\n\r\n', 0x0123),
+(36, 'Làng Cổ Phước Tích - Huế', 'Làng Cổ Phước Tích là một địa điểm du lịch Huế mang đậm nét đẹp truyền thống. Ngôi làng cổ kính này nổi tiếng với những ngôi nhà rường cổ, những con đường làng rợp bóng cây xanh và không khí yên bình. Đến đây, bạn sẽ được trải nghiệm cuộc sống thôn quê, thưởng thức ẩm thực đặc sản và tìm hiểu về văn hóa Huế xưa.\r\n\r\n', 0x12),
+(37, 'Suối Hầm Heo - Huế', 'Suối Hầm Heo là một địa điểm du lịch Huế lý tưởng cho những ai yêu thích trekking và khám phá thiên nhiên. Với hệ thống hang động, thác nước và suối nước trong xanh, Suối Hầm Heo mang đến cho du khách những trải nghiệm thú vị và những bức ảnh \"sống ảo\" độc đáo.\r\n\r\n', 0x0123),
+(38, 'Chợ Đông Ba - Huế', 'Tương tự như chợ Bến Thành ở Sài Gòn, chợ Đầm ở Nha Trang, chợ Đông Ba cũng được xem là một biểu tượng của Huế và là một trong những địa điểm du lịch Huế nổi tiếng. Đây là khu chợ được mở ra từ thời vua Gia Long, sau nhiều biến cố thì được đổi tên thành chợ Đông Ba vào năm 1887 bởi vua Đồng Khánh.\r\n\r\n', 0x0123),
+(39, 'Chùa Từ Đàm - Huế', 'Tọa lạc tại số 1 Sư Liễu Quán, thành phố Huế, chùa Từ Đàm ban đầu có tên gọi là Ấn Tôn, do Minh Hoằng Từ Dung khai sơn trong khoảng từ năm 1695. Chùa Từ Đàm được rất nhiều người biết đến do vai trò quan trọng của chùa trong công cuộc chấn hưng và phát triển Phật giáo Việt Nam thời cận đại; đồng thời cũng là một điểm đến nổi tiếng khi nhắc đến các điểm du lịch Huế.', 0x0123),
+(40, 'Chùa Thiên Mụ - Huế', 'Không thể nào “nhắm mắt làm ngơ” danh thắng này khi nhắc về du lịch Huế – chùa Thiên Mụ. Chùa Thiên Mụ, còn có tên gọi khác là chùa Linh Mụ, nằm trên đồi Hà Khê thuộc tả ngạn sông Hương, phường Kim Long, thành phố Huế (cách trung tâm khoảng 5 km về phía tây). Đây là ngôi chùa ra đời sớm nhất ở Huế (khoảng năm 1601). Khi nhắc về hình ảnh chùa Thiên Mụ, người ta thường nhớ ngay đến tháp Phước Duyên, trước là Từ Nhân Tháp; được xây dựng vào năm 1844 bởi vua Thiệu Trị. Tháp cao 21 m với hình bát giác và có bảy tầng. Mỗi tầng của tháp Phước Duyên thờ một vị Phật khác nhau. Phía trước tháp là đình Hương Nguyện.\r\n\r\n\r\n', 0x0123),
+(41, 'Làng nón Phú Cam - Huế', 'Hình ảnh chiếc nón lá đã gắn liền với vùng đất cố đô từ hàng trăm năm nay và trở thành đặc sản văn hóa “nón bài thơ” gắn với hình tượng của người con gái Huế trong chiếc áo dài thướt tha. Chính vì vậy, nếu có thể, bạn nên ghé qua làng nón Phú Cam, phường Phước Vĩnh, để tận mắt nhìn những bàn tay khéo léo của các bà, các chị khi làm ra những chiếc nón đậm chất Huế này.', 0x0123),
+(42, 'Đàn Nam Giao - Huế', 'Tọa lạc tại đường Điện Biên Phủ trong trung tâm thành phố, đàn Nam Giao chính là một điểm du lịch Huế sẽ tạo điểm nhấn cho cả “chuyến vi hành” xứ Huế của bạn, bởi đây cũng là một trong những dấu ấn và biểu tượng lịch sử nổi tiếng của vùng đất này. Đàn Nam Giao là nơi các vua Nguyễn tế trời, được xây nên vào năm 1806 dưới thời vua Gia Long.', 0x0123),
+(43, 'Hải Vân Quan - Huế', 'Chiếc cổng đã chứng kiến biết bao thăng trầm lịch sử này là một điểm du lịch Huế nổi tiếng, thuộc thị trấn Lăng Cô, huyện Phú Lộc. Nằm trên đỉnh đèo Hải Vân, một trong những đèo hiểm trở bậc nhất của Việt Nam với độ cao 490 m so với mực nước biển, Hải Vân Quan được xây dựng vào năm 1826, dưới thời vua Minh Mạng. Ngày nay, Hải Vân Quan được xem là một thắng cảnh nổi tiếng, và là nơi không nên bỏ qua khi đi du lịch Huế. Đứng trên Hải Vân Quan, bạn có thể ngắm toàn cảnh đèo Hải Vân quanh co, khúc khuỷu men theo triền núi – một góc rộng vô cùng hoàn hảo, đặc biệt với những ai “đam mê landscape” hoặc thích những điểm check-in hoành tráng.', 0x0123),
+(44, 'Nhà vườn An Hiên - Huế', 'Là nhà vườn tiêu biểu nhất với kiến trúc độc đáo và cảnh quan đẹp. Ở giữa khu vườn là ngôi nhà rường ba gian hai chái với thiết kế, chạm trổ và trang trí nội thất hết sức mẫu mực.\r\n', 0x0123),
+(45, 'Nhà vườn Phú Mộng - Huế', 'Là quần thể nhà vườn trong khu vực Phú Mộng – Kim Long ngày nay. Từ trung tâm men theo bờ bắc sông Hương chừng 2 km về hướng thượng nguồn, bạn sẽ đến nơi từng là phủ đệ của các ông hoàng, bà chúa xứ Đàng Trong.', 0x0123),
+(46, 'Vườn Thủy Biều - Huế', 'Đến đây các bạn sẽ tận mắt thấy những khu vườn thanh trà rộng bạt ngàn – loại quả đặc sản Huế và đắm mình trong hương vị thơm ngọt, nhè nhẹ man mát đến khó quên của loại trái này. Hơn nữa, xung quanh Thủy Biều là một hệ thống các danh lam thắng cảm và công trình nổi tiếng, đặc biệt là hệ thống nhà rường cột hơn 100 năm tuổi.', 0x0123),
+(47, 'Biển Cảnh Dương - Huế', 'Cách trung tâm thành phố Huế khoảng 65 km với bãi biển có hình vòng cung, độ dốc thoải, cát trắng mịn và nước biển trong xanh. Đến đây bạn sẽ cảm nhận được vẻ đẹp hoang sơ, đón những ánh nắng đượm vàng và thỏa thích tạo dáng vì bãi biển được ví như cảnh tiên của miền Trung đấy!\r\n\r\n', 0x0123),
+(48, 'Biển Lăng Cô - Huế', 'Là một trong những vịnh biển đẹp nhất thế giới được bầu chọn vào năm 2009, cách trung tâm thành phố Huế khoảng 75 km, bên dưới chân đèo Hải Vân; biển Lăng Cô hiển nhiên xuất hiện trong danh sách những điểm du lịch Huế nhất định phải check-in.\r\n\r\nBiển Lăng Cô gần như chứa đựng tất cả những gì mà thiên nhiên có thể ban tặng: màu xanh của nước biển hòa với những cánh rừng nhiệt đới, bãi cát trắng trải dài, ánh nắng vàng ươm phủ lên cảnh vật mang lại cảm giác vừa mát mẻ nhưng cũng vừa mạnh mẽ.', 0x0123),
+(49, 'Bãi biển Thuận An - Huế', 'Cách trung tâm thành phố Huế khoảng 15 km, đây được xem là nơi thu hút du lịch và là thiên đường nghỉ dưỡng cho nhiều người. Bãi biển Thuận An không còn là địa chỉ xa lạ cho du khách; và nếu chọn lưu trú tại đây vài ngày, bạn còn có thể dành thời gian thưởng thức hương vị rượu nếp làng Chuồn, những món hải sản tươi ngon (sò huyết, tôm, mực nướng bãi biển) cũng như các món ăn địa phương khác.', 0x0123),
+(50, 'Đồi Vọng Cảnh - Huế', 'Trong cẩm nang du lịch Huế “hướng dẫn”, nếu muốn ngắm toàn cảnh thiên nhiên kỳ thú của xứ Huế thì phải đến đâu? Chắc chắn câu trả lời sẽ là đồi Vọng Cảnh, tọa lạc tại phường Thủy Xuân, phía tây nam thành phố Huế. Chân đồi tiếp giáp bờ sông Hương, tọa lạc giữa vùng lăng tẩm của các vua chúa nhà Nguyễn và đối diện với điện Hòn Chén bên kia sông Hương.', 0x0123),
+(51, 'Đầm Chuồn - Huế', 'Đầm Chuồn (xã Phú An, huyện Phú Vang) cũng được xem là một điểm du lịch Huế khá có tiếng trong giới “sống ảo”; là một phần trong hệ thống đầm phá Tam Giang. Chỉ cách thành phố Huế khoảng 10 km, để đến đây bạn chỉ cần đi qua quốc lộ 49 rẽ về hướng An Truyền. Đến đây bạn có thể thưởng ngoạn một đầm nước mênh mông, ngắm cảnh hoàng hôn trên phá cực đẹp, thưởng thức các món ăn; và dĩ nhiên… chụp một vài tấm ảnh “so deep” để chia sẻ về chuyến du lịch Huế tuyệt vời của bạn nữa chứ!\r\n\r\n', 0x0123),
+(52, 'Phá Tam Giang - Huế', 'Trong hầu hết các cẩm nang du lịch Huế, Phá Tam Giang luôn là địa danh không thể vắng mặt. Có chiều dài 25 km, Phá Tam Giang trải dài từ cửa sông Ô Lâu đến cầu Thuận An, nối liền với các đầm Thủy Tú và đầm Cầu Hai.\r\nTừ tháng hai đến tháng bảy là thời gian lý tưởng để trải nghiệm cuộc sống ngư dân nơi đây: cùng đi đánh bắt hải sản, thưởng thức các món ăn được chế biến từ hải sản tươi, hoặc chỉ đơn giản là đắm mình trong sắc trời nhuộm đỏ khi hoàng xuống trên phá Tam Giang.', 0x0123),
+(53, 'Đèo Pe Ker - Huế', 'Nhắc đến Huế, nhiều người nhớ ngay đến đèo Hải Vân mà đôi khi bỏ quên mất Đèo Pe Ker – một địa điểm chưa biết ở Huế dành cho những ai thích khám phá và ngắm toàn cảnh từ trên cao. Đèo Pe Ker có độ dốc 10% và dài hơn 800 m. Từ thác A Nôr, bạn đi về hướng bắc khoảng 10 km để được đắm mình vào khung cảnh nên thơ, đẹp mắt của đèo Pe Ker.\r\n\r\nĐèo Pe Ker đồng thời cũng mang lại một chút “cảm giác mạnh” cho những ai yêu thích mạo hiểm và khám phá bản thân qua những cung đường đèo.', 0x0123),
+(54, 'Cầu Trường Tiền - Huế', 'Địa điểm du lịch Huế cuối cùng mà Traveloka muốn giới thiệu đến bạn hôm nay chính là cây cầu Trường Tiền trứ danh xứ Huế. Cầu Trường Tiền (hay Tràng Tiền) là cây cầu bắc qua sông Hương, được Pháp thiết kế và xây dựng hoàn tất vào năm 1889. Câu nói nổi tiếng “cầu Trường Tiền sáu vài mười hai nhịp” là mô tả chính xác chiều dài của cây cầu này (420.6 m).\r\n\r\nSau nhiều lần thay đổi tên, sau những đợt mưa bom khiến cây cầu mất đi số nhịp ban đầu thì hiện tại, Trường Tiền vẫn là cây cầu chứng nhân lịch sử hiền hòa bắc ngang sông Hương và hằng ngày đón rất nhiều lượt du khách ghé thăm.', 0x0123);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `ID` int(11) NOT NULL,
+  `Name` varchar(40) NOT NULL,
+  `Date` date NOT NULL,
+  `sex` enum('Nam','Nữ','Khác') NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `income` decimal(15,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `posts`
+--
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id_post`);
 
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Name` (`Name`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `posts`
+--
 ALTER TABLE `posts`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
