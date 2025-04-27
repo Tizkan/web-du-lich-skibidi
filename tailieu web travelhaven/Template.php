@@ -3,22 +3,22 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/css/style.css">
         <title> QUẢNG BÁ DU LỊCH</title>
     </head>
     <body>
         <header>
             <div class="logo">
-                <img src="logo.png" alt="Travel Haven">
+                <img src="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/img/logo.png" alt="Travel Haven">
             </div>
             <div class="title">
                 <p>Du Lịch Là Hành Trình Của Trái Tim!<p>
             </div>
             <div class ="header">
-                <img src="header.jpg" alt="">
+                <img src="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/img/header.jpg" alt="">
                 <div class="overlay">
-                    <a href="Register.html"><button class="button">Đăng ký</button></a>
-                    <a href="Login.html"><button class="button">Đăng nhập</button></a>
+                    <a href="Registerr.php"><button class="button">Đăng ký</button></a>
+                    <a href="Loginn.php"><button class="button">Đăng nhập</button></a>
                 </div> 
             </div>
         </header>
@@ -32,7 +32,7 @@
                 </ul>
                     <form action="#" method="get">
                         <input type="search" placeholder="Tìm kiếm..." aria-label="Search">
-                        <button type="submit"><img src="search.jfif" alt="kính lúp"></button>
+                        <button type="submit"><img src="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/img/search.jfif" alt="kính lúp"></button>
                     </form>
                 </li>
             </ul>
@@ -99,7 +99,7 @@
                                 </li>
                                 <li>
                                     <input type="checkbox" id="Xe máy">
-                                    <label for="Xe máy">xe máy</label>
+                                    <label for="Xe máy">Xe máy</label>
                                 </li>
                                 <li>
                                     <input type="checkbox" id="Xe khách">
@@ -139,46 +139,46 @@
         <div class="tour-list">
             <div class="tour">
                 <div class="tour-image">
-                    <img src="Nha Trang.jpg" alt="Tour Image">
+                    <img src="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/img/Nha%20Trang.jpg" alt="Tour Image">
                 </div>        
                 <div class="tour-info">
                     <h3>Du lịch Nha Trang</h3>
                     <p>Văn hóa | Gia đình | biển</p>
                     <p class="price"> 3.250.000 VND / người </p>
                     <p>Từ: Quy Nhơn | Đến: Nha Trang</p>
-                    <a href="#" class="btn">Nhấn xem</a>
+                    <a href="chi-tiet-nha-trang.html" class="btn">Nhấn xem</a>
                 </div>
             </div>
     
             <div class="tour">
                 <div class="tour-image">
-                    <img src="Da Nang.png" alt="Tour Image">
+                    <img src="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/img/Da%20Nang.png" alt="Tour Image">
                 </div>        
                 <div class="tour-info">
                     <h3>Du lịch Đà Nẵng</h3>
                     <p>Cảnh quan | Văn hóa | Tham quan</p>
                     <p class="price"> 3.995.000 VND / người </p>
                     <p>Từ: Quy Nhơn | Đến: Đà Nẵng</p>
-                    <a href="#" class="btn">Nhấn xem</a>
+                    <a href="chi-tiet-da-nang.html" class="btn">Nhấn xem</a>
                 </div>
             </div>
 
             <div class="tour">
                 <div class="tour-image">
-                    <img src="Quang Ngai.jpg" alt="Tour Image">
+                    <img src="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/img/Quang%20Ngai.jpg" alt="Tour Image">
                 </div>  
                 <div class="tour-info">
                     <h3>Du lịch Quảng Ngãi</h3>
                     <p>Cảnh quan | Văn hóa | Tham quan</p>
                     <p class="price"> 3.595.000 VND / người </p>
                     <p>Từ: Quy Nhơn | Đến: Quảng Ngãi</p>
-                    <a href="#" class="btn">Nhấn xem</a>
+                    <a href="chi-tiet-quang-ngai.html" class="btn">Nhấn xem</a>
                 </div>
             </div>
 
             <div class="tour">
                 <div class="tour-image">
-                    <img src="Hue.jpg" alt="Tour Image">
+                    <img src="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/img/Hue.jpg" alt="Tour Image">
                 </div>  
                 <div class="tour-info">
                     <h3>Du lịch Huế</h3>
@@ -191,7 +191,7 @@
     
             <div class="tour">
                 <div class="tour-image">
-                    <img src="Ho Chi Minh.png" alt="Tour Image">
+                    <img src="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/img/Ho%20Chi%20Minh.png" alt="Tour Image">
                 </div>  
                 <div class="tour-info">
                     <h3>Du lịch Hồ Chí Minh</h3>
@@ -202,9 +202,9 @@
                 </div>
             </div>
             <!-- Nút đăng bài -->
-                <div class="add-post-btn">
-                   <span>+</span>
-                </div>
+                <a href="upstt.php" class="add-post-btn">
+                    <span>+</span>
+                </a>
         </div>
     </div>
     
