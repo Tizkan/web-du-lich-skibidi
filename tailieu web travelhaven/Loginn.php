@@ -139,9 +139,9 @@
         </label>
     </div>
     <div class="login-container">
-        <img src="D:\Folder for VSC\Web\tailieu web travelhaven\img\logo.png" alt="TravelHaven">
+        <img src="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/img/logo.png" alt="TravelHaven">
         <h2>Đăng nhập</h2>
-        <form action="Login.html" method="post">
+        <form action="Login.php" method="post">
             <div class="form-group">
                 <input type="text" id="username" name="username" placeholder="Tài khoản" required>
             </div>
