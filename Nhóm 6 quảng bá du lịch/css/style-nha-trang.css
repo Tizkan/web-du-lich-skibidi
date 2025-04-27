@@ -1,0 +1,182 @@
+
+* {
+    margin: 0%;
+    padding: 0%;    
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #007bff00;
+    color: white;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+.header img {
+    background-size:cover;
+    width: 200vmax;
+    height: 250px;
+}
+.logo img { 
+    width: 200px;
+    height: auto;
+    margin-right: 30px;
+    position: absolute;
+    top: 20px;
+    left: 100px;
+}
+
+.overlay  {
+    position: absolute;
+    top: 40px;
+    right: -230.8px ;
+    transform: translate(-50%, -50%);
+    background: rgba(44, 44, 44, 0);
+    padding: 65px;
+    border-radius: 8px;
+}
+.button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color:   #00346c88;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+.button:hover {
+    background-color: #f4f4f483;
+
+}
+.button a {
+    color: white;
+}
+.title p {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 37px;
+    color: rgb(4, 4, 5);
+    position: absolute;
+    margin-top: -80px;
+    padding-inline: 350px;
+}   
+
+.navbar {
+    background-color: #0056b3;
+    padding: 23px;
+    display: flex;
+    margin-top: -5px;
+    justify-content: space-between;
+    height: 65px;
+}
+
+.navbar input {
+    padding-top: 2%;
+    height: 27px;
+    width: 250px;
+}
+
+.navbar button img {
+    padding-top: 1px;
+    height: 19.5px;
+    width: 20px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 35vmax;
+    margin-left: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 23px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #004494;
+}
+
+/* ======= Content ======= */
+.tour-detail {
+    max-width: 90%;
+    margin: 20px auto; 
+    padding: 20px;
+    height: auto;
+    background: rgb(255, 245, 245);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgb(0, 0, 0, 0.75);
+}
+.tour-detail {
+    line-height: 40px;
+}
+.tour-Nha-Trang h1 {
+    font-size: xx-large;
+}
+.tour-Nha-Trang img {
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.tour-Nha-Trang button {
+    background-color: #0056b3;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 4px;
+    border: -10px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 44%;
+    padding: 24px;
+}
+.tour-Nha-Trang button:hover {
+    background-color: #004494;
+}
+.tour-info .description {
+    font-size: 1.1em;
+    color: #555;
+}
+  
+.tour-info .itinerary {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.tour-info .itinerary li {
+    background-color: #f4f4f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+/* ========== footer ============== */
+.footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.social-icons a img {
+    width: 30px;
+    margin: 0 10px;
+}
