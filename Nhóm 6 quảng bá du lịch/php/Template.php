@@ -1,3 +1,17 @@
+<?php
+            session_start();
+            // Giả sử bạn đã lưu tên người dùng vào session sau khi đăng nhập
+            ini_set('display_errors', 1);
+            ini_set('display_startup_errors', 1);
+            error_reporting(E_ALL);
+            
+            if (isset($_SESSION['username'] )) {
+                $username = htmlspecialchars($_SESSION['username']);
+                $greeting = "Xin chào, " . $username;
+            } else {
+                $greeting = "";
+            }
+            ?>
 <!DOCTYPE html>
 <html lang="vi">
     <head>
@@ -17,8 +31,12 @@
             <div class ="header">
                 <img src="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/img/header.jpg" alt="">
                 <div class="overlay">
-                    <a href="Registerr.php"><button class="button">Đăng ký</button></a>
-                    <a href="Loginn.php"><button class="button">Đăng nhập</button></a>
+                <div class="greeting"><?php echo $greeting; ?></div> <!-- Căn trái -->
+                <a href="Registerr.php"><button class="button">Đăng ký</button></a>
+                <a href="Loginn.php"><button class="button">Đăng nhập</button></a>
+                <?php if (isset($_SESSION['username'])): ?>
+                    <a href="logout.php"><button class="button">Đăng xuất</button></a>
+                <?php endif; ?>
                 </div> 
             </div>
         </header>
@@ -144,9 +162,8 @@
                 <div class="tour-info">
                     <h3>Du lịch Nha Trang</h3>
                     <p>Văn hóa | Gia đình | biển</p>
-                    <p class="price"> 3.250.000 VND / người </p>
-                    <p>Từ: Quy Nhơn | Đến: Nha Trang</p>
-                    <a href="chi-tiet-nha-trang.html" class="btn">Nhấn xem</a>
+                    <p>Đến: Nha Trang</p>
+                    <a href="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/php/chi-tiet-nha-trang.php" class="btn">Nhấn xem</a>
                 </div>
             </div>
     
@@ -157,9 +174,8 @@
                 <div class="tour-info">
                     <h3>Du lịch Đà Nẵng</h3>
                     <p>Cảnh quan | Văn hóa | Tham quan</p>
-                    <p class="price"> 3.995.000 VND / người </p>
-                    <p>Từ: Quy Nhơn | Đến: Đà Nẵng</p>
-                    <a href="chi-tiet-da-nang.html" class="btn">Nhấn xem</a>
+                    <p>Đến: Đà Nẵng</p>
+                    <a href="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/php/chi-tiet-da-nang.php" class="btn">Nhấn xem</a>
                 </div>
             </div>
 
@@ -170,9 +186,8 @@
                 <div class="tour-info">
                     <h3>Du lịch Quảng Ngãi</h3>
                     <p>Cảnh quan | Văn hóa | Tham quan</p>
-                    <p class="price"> 3.595.000 VND / người </p>
-                    <p>Từ: Quy Nhơn | Đến: Quảng Ngãi</p>
-                    <a href="chi-tiet-quang-ngai.html" class="btn">Nhấn xem</a>
+                    <p>Đến: Quảng Ngãi</p>
+                    <a href="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/php/chi-tiet-quang-ngai.php" class="btn">Nhấn xem</a>
                 </div>
             </div>
 
@@ -183,22 +198,68 @@
                 <div class="tour-info">
                     <h3>Du lịch Huế</h3>
                     <p>Ấm thực | Văn hóa | Tham quan</p>
-                    <p class="price"> 4.100.000 VND / người </p>
-                    <p>Từ: Quy Nhơn | Đến: Huế</p>
-                    <a href="#" class="btn">Nhấn xem</a>
+                    <p>Đến: Huế</p>
+                    <a href="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/php/chi-tiet-hue.php" class="btn">Nhấn xem</a>
                 </div>
             </div>
     
             <div class="tour">
                 <div class="tour-image">
-                    <img src="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/img/Ho%20Chi%20Minh.png" alt="Tour Image">
+                    <img src="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/img/Quy%20Nhon.jpg" alt="Tour Image">
                 </div>  
                 <div class="tour-info">
-                    <h3>Du lịch Hồ Chí Minh</h3>
+                    <h3>Du lịch Quy Nhơn</h3>
                     <p>Văn hóa | Ẩm thực | Tham quan</p>
-                    <p class="price">3.420.000 VND / người </p>
-                    <p>Từ: Quy Nhơn | Đến: Hà Nội</p>
+                    <p>Đến: Quy Nhơn</p>
+                    <a href="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/php/chi-tiet-quy-nhon.php" class="btn">Nhấn xem</a>
+                </div>
+            </div>
+
+            <div class="tour">
+                <div class="tour-image">
+                    <img src="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/img/Da%20Lat.jpg" alt="Tour Image">
+                </div>  
+                <div class="tour-info">
+                    <h3>Du lịch Đà Lạt</h3>
+                    <p>Văn hóa | Ẩm thực | Tham quan</p>
+                    <p>Đến: Đà Lạt</p>
                     <a href="#" class="btn">Nhấn xem</a>
+                </div>
+            </div>
+
+            <div class="tour">
+                <div class="tour-image">
+                    <img src="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/img/Quang%20Nam.jpeg" alt="Tour Image">
+                </div>  
+                <div class="tour-info">
+                    <h3>Du lịch Quảng Nam</h3>
+                    <p>Văn hóa | Ẩm thực | Tham quan</p>
+                    <p>Đến: Quảng Nam</p>
+                    <a href="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/php/chi-tiet-quang-nam.php" class="btn">Nhấn xem</a>
+                </div>
+            </div>
+
+            <div class="tour">
+                <div class="tour-image">
+                    <img src="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/img/Sapa.png" alt="Tour Image">
+                </div>  
+                <div class="tour-info">
+                    <h3>Du lịch Sapa</h3>
+                    <p>Văn hóa | Ẩm thực | Tham quan</p>
+                    <p>Đến: Sapa </p>
+                    <a href="#" class="btn">Nhấn xem</a>
+                </div>
+            </div>
+
+            <div class="tour">
+                <div class="tour-image">
+                    <img src="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/img/Gia%20Lai.jpg" alt="Tour Image">
+                </div>  
+                <div class="tour-info">
+                    <h3>Du lịch Gia Lai</h3>
+                    <p>Văn hóa | Ẩm thực | Tham quan</p>
+                    <p>Đến: Gia Lai </p>
+                    <a href="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/php/chi-tiet-gia-lai.php" class="btn">Nhấn xem</a>
                 </div>
             </div>
             <!-- Nút đăng bài -->
