@@ -153,8 +153,9 @@
                 <a href="#">Quên mật khẩu?</a>
             </div>
             <button type="submit" class="login-button">Đăng nhập</button>
-            <p>Chưa có tài khoản?<a href="Register.html"> Đăng ký </a></p>
+            <p>Chưa có tài khoản?<a href="http://localhost/BT/Nh%c3%b3m%206%20qu%e1%ba%a3ng%20b%c3%a1%20du%20l%e1%bb%8bch/php/Registerr.php"> Đăng ký </a></p>
         </form>
+        <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
     </div>
     
     <script>
