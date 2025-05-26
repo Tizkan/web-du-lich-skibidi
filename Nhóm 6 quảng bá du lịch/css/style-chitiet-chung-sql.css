@@ -242,14 +242,79 @@ header {
 
 /* ========== footer ============== */
 .footer {
-    background-color: #343a40;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto;
+    background-color: #000; 
+    color: white;           
+    text-align: center;     
+    padding: 20px;         
+    height: 150px;
 }
 
-.social-icons a img {
-    width: 30px;
-    margin: 0 10px;
+.row {
+    float: left;
+    width: 100%;    
+    margin-bottom: 20px;
 }
+
+.boxcenter2 {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;             
+    flex-direction: row;        
+    justify-content: space-between; 
+    align-items: flex-start;
+    gap: 30px;                  
+}
+
+.boxfooter1,
+.boxfooter2,
+.boxfooter3 {
+    width: 32%;    
+    float: none;    
+}
+.boxfooter1 .add {
+    display: inline-block;   
+    margin-right: 15px;      
+    margin-bottom: 0;        
+}
+.boxfooter3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.boxfooter3 h4 {
+    margin-bottom: 10px;
+}
+
+.boxfooter3 .add {
+    display: inline-block;  
+    margin-right: 15px;      
+    margin-bottom: 0;
+}
+
+.boxfooter3 .add:last-child {
+    margin-right: 0;
+}
+.boxfooter3 {
+    flex-direction: column;
+}
+.boxfooter3 > .add {
+    display: inline-block;
+}
+.boxfooter3 {
+    display: block;
+}
+.boxfooter3 .add {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.boxfooter1 .add:last-child {
+    margin-right: 0;         
+}
+
+
+.textcenter{
+    text-align: center;
+}
+
+
