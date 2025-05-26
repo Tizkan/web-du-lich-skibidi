@@ -4,7 +4,7 @@ include 'db.php';
 session_start();
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
-    $pageTitle = "TOUR GIA LAI"; // Đổi tên cho từng trang
+    $pageTitle = "TOUR ĐÀ NẴNG"; // Đổi tên cho từng trang
     $action = "Đã xem trang: $pageTitle";
     $stmt = $conn->prepare("INSERT INTO user_history (user_id, action) VALUES (?, ?)");
     $stmt->bind_param("is", $user_id, $action);
@@ -17,14 +17,14 @@ $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $offset = ($currentPage - 1) * $itemsPerPage;
 
 // Lấy tổng số mục
-$totalQuery = "SELECT COUNT(*) as total FROM posts WHERE location LIKE N'%Gia Lai'";
+$totalQuery = "SELECT COUNT(*) as total FROM posts WHERE location LIKE N'%Đà Nẵng'";
 $totalResult = mysqli_query($conn, $totalQuery);
 $totalRow = mysqli_fetch_assoc($totalResult);
 $totalItems = $totalRow['total'];
 $totalPages = ceil($totalItems / $itemsPerPage);
 
 // Truy vấn để lấy dữ liệu cho trang hiện tại
-$query = "SELECT location, descript, img, ggmap FROM posts WHERE location LIKE N'%Gia Lai' LIMIT $offset, $itemsPerPage"; 
+$query = "SELECT location, descript, img, ggmap FROM posts WHERE location LIKE N'%Đà Nẵng' LIMIT $offset, $itemsPerPage"; 
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -34,7 +34,7 @@ $result = mysqli_query($conn, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style-chitiet-chung-sql.css">
-    <title>TOUR GIA LAI</title>
+    <title>TOUR ĐÀ NẴNG</title>
 </head>
 <body>
     <header>
@@ -52,7 +52,7 @@ $result = mysqli_query($conn, $query);
     <nav class="navbar">
         <ul class="menu">
             <ul class="nav-links">
-                <li><a href="index.php">Trang chủ</a></li>
+                <li><a href="#">Trang chủ</a></li>
                 <li><a href="introduce.php">Giới thiệu</a></li>
                 <li><a href="Template.php">Địa điểm</a></li>
                 <li><a href="#">Liên hệ</a></li>
@@ -68,8 +68,8 @@ $result = mysqli_query($conn, $query);
     <section class="tour-detail">
         <div class="tour-title">
             <div class="tour-VN">
-                <h1>Du lịch Gia Lai</h1>
-                <img src="img/Gia%20Lai.jpg">
+                <h1>Du lịch Đà Nẵng</h1>
+                <img src="img/Da Nang.png">
                 <h2>Gợi ý</h2>
                 
                 <?php
